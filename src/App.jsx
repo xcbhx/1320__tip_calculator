@@ -23,41 +23,39 @@ function App() {
   };
 
   return (
-    <div className='container'>
-      <div className="App">
-        <h1>Tip Calculator</h1>
-        <label>Enter Bill Amount:</label>
-        <input 
-          placeholder='Bill Amount'
-          type='number'
-          value={billAmount}
-          // use parseInt or parseFloat to convert to number
-          onInput={(e) => setBillAmount(parseFloat(e.target.value))}
-          // onInput changes the values right away as your typing
-          // or use onChange={} only changes when you're done entering your input
-        />
-        <label>Enter Amount of People Splitting:</label>
-        <input
-          placeholder='Split'
-          type='number'
-          value={people}
-          onInput={(e) => setPeople(parseFloat(e.target.value))}
-        />
+    <div className="App">
+      <h1>Tip Calculator</h1>
+      <label>Enter Bill Amount:</label>
+      <input 
+        placeholder='Bill Amount'
+        type='number'
+        value={billAmount}
+        // use parseInt or parseFloat to convert to number
+        onInput={(e) => setBillAmount(parseFloat(e.target.value))}
+        // onInput changes the values right away as your typing
+        // or use onChange={} only changes when you're done entering your input
+      />
+      <label>Enter Amount of People Splitting:</label>
+      <input
+        placeholder='Split'
+        type='number'
+        value={people}
+        onInput={(e) => setPeople(parseFloat(e.target.value))}
+      />
+      <div>
         <div>
-          <div>
-            <label>Enter Tip Amount: </label>
-            <button onClick={increaseTip}>+</button>
-            <input 
-            placeholder='Tip'
-            type='number'
-            value={tipPercent}
-            onInput={(e) => setTipPercent(parseFloat(e.target.value))}
-            />
-            <button onClick={decreaseTip}>-</button>
-          </div>
-          <p>Your Tip Total: ${tipAmount.toFixed(2)}</p>
-          <p>Total for Each Person: ${split.toFixed(2)}</p>
+          <label>Enter Tip Amount: </label>
+          <button onClick={increaseTip}>+</button>
+          <input 
+          placeholder='Tip'
+          type='number'
+          value={tipPercent}
+          onInput={(e) => setTipPercent(parseFloat(e.target.value))}
+          />
+          <button onClick={decreaseTip}>-</button>
         </div>
+        <p>Your Tip Total: ${tipAmount.toFixed(2)}</p>
+        <p>Total for Each Person: ${split.toFixed(2)}</p>
       </div>
     </div>
   )
